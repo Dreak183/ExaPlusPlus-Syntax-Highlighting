@@ -1,0 +1,102 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "EXA++",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#entities"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#operator"
+		},
+		{
+			"include": "#invalid"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.expp",
+				"match": "\\b(if|while|forever|else|break)\\b"
+			}]
+		},
+		"constants": {
+			"patterns": [
+			  {
+				"match": "\\b(\\d+)\\b",
+				"name": "constant.numeric.expp"
+			  }
+			]
+		},
+		"functions": {
+			"patterns": [
+			  {
+				"match": "(?i)\\b(link|mode|send|recv|read|spawn|make|drop|grab|seek|delete|write|cut|kill|die|wait)\\b",
+				"name": "support.function.expp"
+			  }
+			]
+		},
+		  "storage": {
+			"patterns": [
+			  {
+				"match": "(?i)\\b(exa|eof)\\b",
+				"name": "storage.type.expp"
+			  }
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.expp",
+			"patterns": [
+				{
+					"match": "[a-zA-Z]*[a-z]+[a-zA-Z]*"
+				}
+			]
+		},
+		"entities": {
+				"patterns": [
+					{
+						"match": "#.[a-zA-Z]*",
+						"name": "entity.name.expp"
+					}
+				]
+		},
+		"comments": {
+			"pattern": [
+				{
+					"match": "(?i)(\\/\\/).*",
+					"name": "comment.line.double-slash.expp"
+				}
+			]
+		},
+		"operator": {
+			"match": "(?i)\\b(\\+|\\-|\\!\\=|\\*|\\/|\\%|\\=|\\<|\\>)\\b",
+			"name": "keyword.operator.logical.expp"
+		}
+	},
+	"invalid": {
+		"patterns": [
+		  {
+			"match": ".*[^;{}()\n]$",
+			"name": "invalid.illegal.expp"
+		  }
+		]
+	},
+	"scopeName": "source.exapp"
+}

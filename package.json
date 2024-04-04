@@ -1,0 +1,33 @@
+{
+  "name": "exaplusplus-syntax-highlighting",
+  "author": "Dreak <dreak_dev@the-hub.cloud>",
+  "publisher": "Dreak",
+  "displayName": "EXA++ Syntax Highlighting",
+  "description": "Syntax Highlighting for ExaPlusPlus, the high-level language of exa. ExaPlusPlus:https://github.com/TesAnti/ExaPlusPlus",
+  "icon": "assets/exapunks.png",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "expp",
+      "aliases": ["EXA++", "expp", "exapp", "ExaPlusPlus"],
+      "extensions": [".expp"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "expp",
+      "scopeName": "source.exapp",
+      "path": "./syntaxes/expp.tmLanguage.json"
+    }],
+    "license": "Apache-2.0",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Dreak183/ExaPlusPlus-Syntax-Highlighting"
+    }
+  }
+}
